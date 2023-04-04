@@ -1,6 +1,5 @@
 ﻿using DataViewer;
-using DataViewer.Utility;
-using DataViewer.Utility.ReflectionTree;
+using ModKit.DataViewer;
 using Kingmaker.Blueprints;
 using ModKit;
 using ModKit.Utility;

@@ -1,4 +1,4 @@
-﻿using DataViewer.Utility;
+﻿using ModKit.DataViewer;
 using Kingmaker;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.Globalmap.View;
