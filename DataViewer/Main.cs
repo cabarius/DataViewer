@@ -34,10 +34,14 @@ namespace DataViewer
             ModManager = new ModManager<Core, Settings>();
             Menu = new MenuManager();
             modEntry.OnToggle = OnToggle;
+            modEntry.OnShowGUI = OnShowGUI;
 #if (DEBUG)
             modEntry.OnUnload = Unload;
             Main.modEntry = modEntry;
             return true;
+        }
+        private static void OnShowGUI(UnityModManager.ModEntry modEntry) {
+            Mod.OnShowGUI();
         }
 
         static bool Unload(UnityModManager.ModEntry modEntry) {
