@@ -40,9 +40,6 @@ namespace DataViewer
             Main.modEntry = modEntry;
             return true;
         }
-        private static void OnShowGUI(UnityModManager.ModEntry modEntry) {
-            Mod.OnShowGUI();
-        }
 
         static bool Unload(UnityModManager.ModEntry modEntry) {
             ModManager.Disable(modEntry, true);
@@ -54,6 +51,9 @@ namespace DataViewer
             return true;
         }
 #endif
+        private static void OnShowGUI(UnityModManager.ModEntry modEntry) {
+            Mod.OnShowGUI();
+        }
         static void ModManagerPropertyChanged(object sender, PropertyChangedEventArgs e) {
             settings.selectedTab = Menu.tabIndex;
         }

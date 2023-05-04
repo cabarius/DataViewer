@@ -268,9 +268,12 @@
   <Import Project="..\..\ToyBox\ModKit\ModKitSrc.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>echo "$(TargetPath)" "&gt;C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\$(ProjectName)\$(ProjectName).dll*"
-copy /Y "$(TargetPath)" "C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\$(ProjectName)\$(ProjectName).dll"
-copy /Y "$(TargetDir)$(TargetName).pdb" "C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Mods\$(ProjectName)\$(ProjectName).pdb"
+    <PostBuildEvent>echo "$(TargetPath)" "&gt;$(WrathPath)\Mods\$(ProjectName)\$(ProjectName).dll*"
+copy /Y "$(TargetPath)" "$(WrathPath)\Mods\$(ProjectName)\$(ProjectName).dll"
+copy /Y "$(TargetDir)$(TargetName).pdb"$(WrathPath)\Mods\$(ProjectName)\$(ProjectName).pdb"
+xcopy /Y "$(ProjectDir)\Info.json" "$(WrathPath)\Mods\$(ProjectName)\Info.json*"
+xcopy /Y "$(ProjectDir)\Repository.json" "$(WrathPath)\Mods\$(ProjectName)\Repository.json*"
+
 powershell.exe -ExecutionPolicy Unrestricted -f "$(ProjectDir)zip-hash-sign.ps1"
 
 </PostBuildEvent>

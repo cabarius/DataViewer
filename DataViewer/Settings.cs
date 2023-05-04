@@ -7,7 +7,7 @@ namespace DataViewer
         public int selectedTab = 0;
         public int selectedRawDataType = 0;
         public int maxRows = 20;
-        public int maxSearchDepth = 3;
+        public int maxSearchDepth = 1;
         public string searchChildName = "name";
         public string searchText = "";
         public bool searchReversed = false;
